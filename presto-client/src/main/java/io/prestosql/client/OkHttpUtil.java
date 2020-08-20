@@ -93,7 +93,7 @@ public final class OkHttpUtil
         checkArgument(CharMatcher.inRange((char) 33, (char) 126).matchesAllOf(accessToken));
 
         return chain -> chain.proceed(chain.request().newBuilder()
-                .addHeader(AUTHORIZATION, "Bearer " + accessToken)
+                .addHeader(AUTHORIZATION, accessToken)
                 .build());
     }
 
